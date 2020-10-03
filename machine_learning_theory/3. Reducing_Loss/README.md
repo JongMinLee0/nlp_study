@@ -81,7 +81,36 @@ w1의 가능한 모든 값에 대해 손실을 계산할 시간과 컴퓨팅 자
 <img src="https://user-images.githubusercontent.com/48028667/94564027-72dd5f00-02a2-11eb-9be8-23e93d2501cc.PNG" style="width: 400px">
 </p>  
 
-### ** 기울기 보폭을 통해 손실 곡선의 다음 지점으로 이동합니다.**  
+### **기울기 보폭을 통해 손실 곡선의 다음 지점으로 이동합니다.**  
 그런 다음 경사하강법은 이 과정을 반복해 최소값에 점점 접근합니다.  
+
+
+<br />
+
+
+# Reducing Loss : Learning Rate
+
+위에서 살펴본 경사하강법 알고리즘은 기울기에 **학습률**(learning rate) 혹은 **step size**라는 스칼라 값을 곱하여 다음 지점을 결정 합니다.  
+예를 들어 기울기가 2.5이고 학습률이 0.01이면 경사하강법 알고리즘은 이전 지점으로부터 0.025 떨어진 지점을 다음 지점으로 결정합니다.   
+초매개변수(Hyperparameters)는 프로그래머가 아닌 머신러닝 알고리즘에서 조정하는 값입니다. 대부분의 머신러닝 프로그래머는 학습률을 미세조정하는데 상당한 시간을 소비 합니다. 학습률을 너무 작게 설정하면 학습 시간이 매우 오래 걸릴 것 입니다.
+<p align="center">
+<img src="https://user-images.githubusercontent.com/48028667/94986337-fea00580-0598-11eb-83f6-adbaed4dbfb8.PNG" style="width: 400px">
+</p>  
+
+<br />
+
+반대로 학습률을 너무 크게 설정하면 양자역학 실험을 잘못한 것 처럼 다음 지점이 곡선의 최저점에서 무질서하게 이탈할 우려가 있습니다.
+<p align="center">
+<img src="https://user-images.githubusercontent.com/48028667/94986339-0069c900-0599-11eb-9f20-5ee7962a64cd.PNG" style="width: 400px">
+</p>  
+
+<br />
+
+모든 회귀 문제에서는 [Goldilocks](https://en.wikipedia.org/wiki/Goldilocks_principle) 학습률이 있습니다. 골리락스 값은 손실함수가 얼마나 평탄한지 여부와 관련이 있습니다. 손실함수의 기울기가 작다면 더 큰 학습률을 시도해 볼 수 있습니다. 이렇게 하면 작은 기울기를 보완하고 더 큰 보폭(step size)를 만들어 낼 수 있습니다.
+<p align="center">
+<img src="https://user-images.githubusercontent.com/48028667/94986340-02cc2300-0599-11eb-8973-79c665a1ab39.PNG" style="width: 400px">
+</p>  
+
+<br />
 
 
